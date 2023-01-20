@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS User (
     telephone INT(9) NOT NULL,
     email VARCHAR(100) NOT NULL,
     admin BOOLEAN DEFAULT 0,
-    password VARCHAR(30)
+    password VARCHAR(60)
 );
 
 CREATE TABLE IF NOT EXISTS Booking (

@@ -1,33 +1,46 @@
 <?php
+session_start();
+
+if (isset($_SESSION["user"])){
+    header("Location: ../index.php");
+}
+
 if (isset($_POST['submit'])){
     $resultado = [
         'error' => false,
-        'mensaje' => 'El usuario ' . $_POST['nombre'] . ' ha sido agregado con exito'
+        'mensaje' => 'El usuario ' . $_POST['registerFirstName'] . ' ha sido agregado con exito'
     ];
     $config = include '../database/config.php';
 
+    if ($_POST['registerInputPassword'] === $_POST['registerRepeatPassword']){
+        try {
+            $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
+            $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
+    
+            $cliente = array(
+                "dni" => $_POST['registerInputDni'],
+                "name" => $_POST['registerFirstName'],
+                "lastname" => $_POST['registerLastName'],
+                "telephone" => $_POST['registerInputTel'],
+                "email" => $_POST['registerInputEmail'],
+                "password" => password_hash($_POST['registerInputPassword'], PASSWORD_DEFAULT));
+    
+            $consultaSQL = "INSERT INTO User (dni, name, lastname, telephone, email, password)";
+            $consultaSQL .= " VALUES (:" .implode(",:", array_keys($cliente)) . ")";
+            
+            $sentencia = $conexion->prepare($consultaSQL);
+            $sentencia->execute($cliente);
 
-    try {
-        $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
-        $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
+            header('Location: ./login.php');
 
-        $cliente = array(
-            "dni" => $_POST['nombre'],
-            "name" => $_POST['nombre'],
-            "lastname" => $_POST['apellido'],
-            "telephone" => $_POST['apellido'],
-            "email" => $_POST['apellido'],
-            "password" => hash("SHA-256", $_POST['apellido'])
-        );
-
-        $consultaSQL = "INSERT INTO User (dni, name, lastname, telephone, email, password)";
-        $consultaSQL .= " VALUES (:" .implode(",:", array_keys($cliente)) . ")";
-        
-        $sentencia = $conexion->prepare($consultaSQL);
-        $sentencia->execute($cliente);
-    }catch(PDOException $error){
+        }catch(PDOException $error){
+            $resultado['error'] = true;
+            $resultado['mensaje'] = $error->getMessage();
+        }
+    }
+    else{
         $resultado['error'] = true;
-        $resultado['mensaje'] = $error->getMessage();
+            $resultado['mensaje'] = "Passwords doesn't match";
     }
 }
  
@@ -36,7 +49,21 @@ include "./parts/header.php"; ?>
 </head>
 
 <body class="bg-gradient-primary">
-
+<?php
+    if (isset($resultado)){
+    ?>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-<?= $resultado['error'] ? 'danger' : "success" ?>" role="alert">
+                    <?= $resultado['mensaje'] ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    }
+?>
     <div class="container">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
@@ -49,9 +76,9 @@ include "./parts/header.php"; ?>
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            <form method="post" class="user">
                             <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="registerInputEmail" name="registerInputEmail"
+                                    <input type="text" class="form-control form-control-user" id="registerInputDni" name="registerInputDni"
                                         placeholder="DNI">
                                 </div>
                                 <div class="form-group row">
@@ -90,7 +117,7 @@ include "./parts/header.php"; ?>
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="login.php">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
