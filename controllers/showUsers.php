@@ -31,8 +31,7 @@
                         <a href="./update.php?id= <?=$key["id"]?>&reservDate= <?=$key["reservDate"]?>&nclients= <?=$key["nclients"]?>" class="btn btn-primary btn-icon-split mb-1">
                             <span class="text">Update</span>
                         </a>
-                        <a class="btn btn-danger btn-icon-split mb-1"
-                            data-toggle="modal" data-target="">
+                        <a href="./cancel.php?id= <?=$key["id"]?>" class="btn btn-danger btn-icon-split mb-1">
                             <span class="text">Cancel</span>
                         </a>
                     </div>
@@ -44,7 +43,7 @@
             ?>
             <div class="card shadow w-50 m-4 border-left-primary">
                 <div class="card-header py-3">
-                    <i>Todavía no hay reservas</i>   
+                    <i>You have not made reservations yet</i>   
                 </div>
             </div>
             <?php
