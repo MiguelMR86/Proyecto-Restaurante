@@ -15,5 +15,8 @@ CREATE TABLE IF NOT EXISTS Booking (
     id INT PRIMARY KEY AUTO_INCREMENT,
     dnir VARCHAR(9) NOT NULL,
     reservDate DATE NOT NULL,
-    nclients INT
+    nclients INT NOT NULL,
 );
+
+--  admin123
+-- INSERT INTO User VALUES ("12345678A", "Admin", "admin", 123456789, "admin@gmail.com", 1, "$2y$10$OD2bzhYFXt/qircUkmddAeZiUno6FTzKAttzfl2d6QxZVVAhVsFSK");
