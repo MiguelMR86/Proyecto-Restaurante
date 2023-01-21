@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION["user"])){
-    header("Location: ../index.php");
+    header("Location: ./user.php");
 }
 
 if (isset($_POST['submit'])){
@@ -23,15 +23,35 @@ if (isset($_POST['submit'])){
                 "lastname" => $_POST['registerLastName'],
                 "telephone" => $_POST['registerInputTel'],
                 "email" => $_POST['registerInputEmail'],
-                "password" => password_hash($_POST['registerInputPassword'], PASSWORD_DEFAULT));
-    
-            $consultaSQL = "INSERT INTO User (dni, name, lastname, telephone, email, password)";
-            $consultaSQL .= " VALUES (:" .implode(",:", array_keys($cliente)) . ")";
-            
-            $sentencia = $conexion->prepare($consultaSQL);
-            $sentencia->execute($cliente);
+                "password" => password_hash($_POST['registerInputPassword'], PASSWORD_DEFAULT)
+            );
 
-            header('Location: ./login.php');
+            // DB query Check Insert
+            $sentencia = $conexion->prepare("SELECT dni FROM User WHERE dni = ?");
+            $sentencia->bindParam(1, $cliente["dni"], PDO::PARAM_STR);
+            $sentencia->execute();
+
+            // Query result
+            $dbUser = $sentencia->fetch();
+
+            // Insert new user
+            if (!$dbUser){
+                // DB query Insert
+                $sentencia = $conexion->prepare("INSERT INTO User (dni, name, lastname, telephone, email, password) VALUES (?, ?, ?, ?, ?, ?)");
+                $sentencia->bindParam(1, $cliente["dni"], PDO::PARAM_STR);
+                $sentencia->bindParam(2, $cliente["name"], PDO::PARAM_STR);
+                $sentencia->bindParam(3, $cliente["lastname"], PDO::PARAM_STR);
+                $sentencia->bindParam(4, $cliente["telephone"], PDO::PARAM_INT);
+                $sentencia->bindParam(5, $cliente["email"], PDO::PARAM_STR);
+                $sentencia->bindParam(6, $cliente["password"], PDO::PARAM_STR);
+                $sentencia->execute();
+
+                header('Location: ./login.php');
+            } else{
+                $resultado['error'] = true;
+                $resultado['mensaje'] = "This user already exists";
+            }
+
 
         }catch(PDOException $error){
             $resultado['error'] = true;
@@ -40,7 +60,7 @@ if (isset($_POST['submit'])){
     }
     else{
         $resultado['error'] = true;
-            $resultado['mensaje'] = "Passwords doesn't match";
+        $resultado['mensaje'] = "Passwords doesn't match";
     }
 }
  
