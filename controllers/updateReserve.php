@@ -51,5 +51,4 @@
         $resultado['error'] = true;
         $resultado['mensaje'] = $error->getMessage();
     }
-    header('Location: ./user.php')
 ?>

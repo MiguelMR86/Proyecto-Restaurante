@@ -15,10 +15,6 @@ if (isset($_POST['reservationSubmit'])){
     include '../controllers/reservation.php';
 }
 
-if (isset($_POST['updateSubmit'])){
-    include '../controllers/reservation.php';
-}
-
 include '../controllers/adminCheck.php';
 
 ?>
