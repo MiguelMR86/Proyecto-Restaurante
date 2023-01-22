@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (isset($_POST['logoutSubmit'])){
+    session_destroy();
+    header('Location: ./index.php');
+}
+
+if (isset($_SESSION["user"])){
+    $config = include './database/config.php';
+    include './controllers/adminCheck.php';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,14 +34,58 @@
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand navbar-secondary bg-secondary topbar mb-4 static-top shadow">
+            <div class="container"></div>
             <div class="container">
                 <a class="navbar-brand text-light" href="index.php">Restaurant</a>
                 <div>
-                    <a class="btn btn-success shadow mr-2" href="./views/login.php">Sign In</a>
-                    <a class="btn btn-primary shadow" href="./views/register.php">Sign Up</a>
+                <?php if (!isset($_SESSION["user"])){ ?>
+                    <a class="btn btn-success shadow mr-2" href="./views/login.php">Sing In</a>
+                    <a class="btn btn-primary shadow" href="./views/register.php">Sing Up</a>
+                <?php }else{ ?>
+                    <a class="btn btn-success shadow mr-2" href="./views/user.php">Let's start!</a>
+                <?php } ?>
                 </div>
             </div>
             
+            <?php if (isset($_SESSION["user"])){ ?>
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav">
+
+                <div class="topbar-divider d-none d-sm-block"></div>
+
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="img-profile rounded-circle"
+                            src="../img/undraw_profile.svg">
+                    </a>
+                    <!-- Dropdown - User Information -->
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Profile
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Settings
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Activity Log
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+            <?php } ?>
+
         </nav>
 
         <!-- Icons Grid-->
@@ -120,6 +178,28 @@
                 <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </footer>
 
+        <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <form action="index.php" method="post">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <button id="logoutSubmit" name="logoutSubmit"class="btn btn-primary" type="submit">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
@@ -129,5 +209,21 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="../js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="../vendor/chart.js/Chart.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="../js/demo/chart-area-demo.js"></script>
+        <script src="../js/demo/chart-pie-demo.js"></script>
     </body>
 </html>

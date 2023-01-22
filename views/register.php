@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION["user"])){
-    header("Location: ./user.php");
+    header("Location: ../index.php");
 }
 
 if (isset($_POST['submit'])){

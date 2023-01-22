@@ -1,11 +1,17 @@
 <?php
+    define('ROOT_PATH', dirname(__FILE__).'\\');
+    define('INDEX_PATH', ROOT_PATH.'/index.php');
+
     // Admin check
     $adminResult = [
         'error' => false,
         'mensaje' => 'El usuario se ha logeado correctamente'
     ];
-    $config = include '../database/config.php';
-
+    
+    if (!isset($config)){
+        $config = include '../database/config.php';
+    }    
+    
     try {
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);

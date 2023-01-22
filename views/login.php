@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION["user"])){
-    header("Location: ./user.php");
+    header("Location: ../index.php");
 }
 
 if (isset($_POST['submitLogin'])){
@@ -31,7 +31,7 @@ if (isset($_POST['submitLogin'])){
 
         if (password_verify($login_pass, $userPass)){
             $_SESSION["user"] = $dni;
-            header("Location: ./user.php");
+            header("Location: ../index.php");
         }
 
         else{
