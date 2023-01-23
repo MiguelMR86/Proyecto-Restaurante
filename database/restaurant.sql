@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS Booking (
     id INT PRIMARY KEY AUTO_INCREMENT,
     dnir VARCHAR(9) NOT NULL,
     reservDate DATE NOT NULL,
-    nclients INT NOT NULL,
+    nclients INT NOT NULL
 );
 
 --  admin123
