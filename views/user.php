@@ -53,7 +53,7 @@ include '../controllers/adminCheck.php';
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-secondary bg-primary topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-secondary <?= $admin ? 'bg-primary' :  'bg-secondary'; ?> topbar mb-4 static-top shadow">
                     <a class="navbar-brand text-light" href="../index.php">Restaurant</a>
                     <div class="topbar-divider d-none d-sm-block"></div>
 
