@@ -39,9 +39,11 @@ if (isset($_SESSION["user"])){
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand navbar-secondary bg-secondary topbar mb-4 static-top shadow">
-            <div class="container"></div>
-            <div class="container">
+            <div class="container w-25"></div>
+            <div class="container d-flex justify-content-center w-50">
                 <a class="navbar-brand text-light" href="index.php">Restaurant</a>
+            </div>
+            <div class="container w-25 d-flex justify-content-end">
                 <div>
                 <?php if (!isset($_SESSION["user"])){ ?>
                     <a class="btn btn-success shadow mr-2" href="./views/login.php">Sing In</a>
