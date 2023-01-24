@@ -12,7 +12,7 @@ if (!isset($_SESSION["user"])){
 
 // Reservation Check
 if (isset($_POST['reservationSubmit'])){
-    include '../controllers/reservation.php';
+    include '../controllers/makeReservation.php';
 }
 
 include '../controllers/adminCheck.php';

@@ -10,7 +10,7 @@
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
         // DB query
-        $sentencia = $conexion->prepare('SELECT id, dnir, reservDate, nclients FROM Booking WHERE dnir = ?');
+        $sentencia = $conexion->prepare('SELECT id, bemail, reserveDate, nclients FROM Booking WHERE bemail = ?');
         $sentencia->bindParam(1, $_SESSION['user'], PDO::PARAM_STR);
         $sentencia->execute();
 
@@ -26,14 +26,14 @@
         }
 
         foreach($reserveList as $reserve){
-            if($reserve['reservDate'] === $_POST['updateDate']){
+            if($reserve['reserveDate'] === $_POST['updateDate']){
                 $valid2 = false;
             }
         }
 
         if ($valid1 && $valid2){
             // DB query Check Reserve
-            $sentencia = $conexion->prepare('UPDATE Booking SET reservDate = ?, nclients = ? WHERE dnir = ? and id = ?');
+            $sentencia = $conexion->prepare('UPDATE Booking SET reserveDate = ?, nclients = ? WHERE bemail = ? and id = ?');
             $sentencia->bindParam(1, $_POST['updateDate'], PDO::PARAM_STR);
             $sentencia->bindParam(2, $_POST['updateClients'], PDO::PARAM_STR);
             $sentencia->bindParam(3, $_SESSION['user'], PDO::PARAM_STR);

@@ -12,13 +12,13 @@ if (!isset($_SESSION["user"])) {
 
 if (isset($_GET["id"])){
     $id = $_GET["id"];
-    $reservDate = $_GET["reservDate"];
+    $reserveDate = $_GET["reserveDate"];
     $nclients = $_GET["nclients"];
 }
 
 if(isset($_POST['updateSubmit'])){
     $id = $_POST['id'];
-    $reservDate = $_POST['updateDate'];
+    $reserveDate = $_POST['updateDate'];
     $nclients = $_POST['updateClients'];
     include '../controllers/updateReserve.php';
 }
@@ -135,7 +135,7 @@ include '../controllers/adminCheck.php';
                                         <input name="id" id="id" type="hidden" value="<?= $id ?>">
                                         <input type="date" class="form-control form-control-user"
                                             id="updateDate" name="updateDate" aria-describedby="date"
-                                            value="<?= date("Y-m-d", strtotime($reservDate)) ?>">
+                                            value="<?= date("Y-m-d", strtotime($reserveDate)) ?>">
                                     </div>
                                     <div class="form-group">
                                         <input type="number" min="1" max="10" class="form-control form-control-user"

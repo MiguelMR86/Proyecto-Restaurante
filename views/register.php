@@ -18,17 +18,16 @@ if (isset($_POST['submit'])){
             $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
     
             $cliente = array(
-                "dni" => $_POST['registerInputDni'],
+                "email" => $_POST['registerInputEmail'],
                 "name" => $_POST['registerFirstName'],
                 "lastname" => $_POST['registerLastName'],
                 "telephone" => $_POST['registerInputTel'],
-                "email" => $_POST['registerInputEmail'],
                 "password" => password_hash($_POST['registerInputPassword'], PASSWORD_DEFAULT)
             );
 
             // DB query Check Insert
-            $sentencia = $conexion->prepare("SELECT dni FROM User WHERE dni = ?");
-            $sentencia->bindParam(1, $cliente["dni"], PDO::PARAM_STR);
+            $sentencia = $conexion->prepare("SELECT email FROM User WHERE email = ?");
+            $sentencia->bindParam(1, $cliente["email"], PDO::PARAM_STR);
             $sentencia->execute();
 
             // Query result
@@ -37,13 +36,12 @@ if (isset($_POST['submit'])){
             // Insert new user
             if (!$dbUser){
                 // DB query Insert
-                $sentencia = $conexion->prepare("INSERT INTO User (dni, name, lastname, telephone, email, password) VALUES (?, ?, ?, ?, ?, ?)");
-                $sentencia->bindParam(1, $cliente["dni"], PDO::PARAM_STR);
+                $sentencia = $conexion->prepare("INSERT INTO User (email, name, lastname, telephone, password) VALUES (?, ?, ?, ?, ?)");
+                $sentencia->bindParam(1, $cliente["email"], PDO::PARAM_STR);
                 $sentencia->bindParam(2, $cliente["name"], PDO::PARAM_STR);
                 $sentencia->bindParam(3, $cliente["lastname"], PDO::PARAM_STR);
                 $sentencia->bindParam(4, $cliente["telephone"], PDO::PARAM_INT);
-                $sentencia->bindParam(5, $cliente["email"], PDO::PARAM_STR);
-                $sentencia->bindParam(6, $cliente["password"], PDO::PARAM_STR);
+                $sentencia->bindParam(5, $cliente["password"], PDO::PARAM_STR);
                 $sentencia->execute();
 
                 header('Location: ./login.php');
@@ -98,8 +96,8 @@ include "./parts/header.php"; ?>
                             </div>
                             <form method="post" class="user">
                             <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="registerInputDni" name="registerInputDni"
-                                        placeholder="DNI">
+                                    <input type="email" class="form-control form-control-user" id="registerInputEmail" name="registerInputEmail"
+                                            placeholder="Email Address">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -111,17 +109,11 @@ include "./parts/header.php"; ?>
                                             placeholder="Last Name">
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6">
+                                <div class="form-group row m-1 pb-1">
                                         <input type="tel" class="form-control form-control-user" id="registerInputTel" name="registerInputTel"
                                             placeholder="Phone number">
-                                    </div>
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="email" class="form-control form-control-user" id="registerInputEmail" name="registerInputEmail"
-                                            placeholder="Email Address">
-                                    </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row pt-2">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
                                             id="registerInputPassword" name="registerInputPassword" placeholder="Password">
@@ -148,14 +140,14 @@ include "./parts/header.php"; ?>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../js/sb-admin-2.min.js"></script>
 
 </body>
 

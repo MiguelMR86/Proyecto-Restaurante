@@ -17,7 +17,7 @@
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
         
         // DB query
-        $sentencia = $conexion->prepare("SELECT admin FROM User WHERE dni = ?");
+        $sentencia = $conexion->prepare("SELECT admin FROM User WHERE email = ?");
         $sentencia->bindParam(1, $_SESSION["user"], PDO::PARAM_STR);
         $sentencia->execute();
 

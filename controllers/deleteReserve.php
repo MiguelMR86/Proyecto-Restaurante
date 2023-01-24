@@ -10,7 +10,7 @@
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
         // DB query
-        $sentencia = $conexion->prepare('DELETE FROM Booking WHERE dnir = ? AND id = ?');
+        $sentencia = $conexion->prepare('DELETE FROM Booking WHERE bemail = ? AND id = ?');
         $sentencia->bindParam(1, $_SESSION['user'], PDO::PARAM_STR);
         $sentencia->bindParam(2, $_POST['id'], PDO::PARAM_STR);
         $sentencia->execute();

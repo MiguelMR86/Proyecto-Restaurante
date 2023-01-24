@@ -17,20 +17,20 @@ if (isset($_POST['submitLogin'])){
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
         // Login parameters
-        $dni = $_POST['loginInputDni'];
+        $email = $_POST['loginInputEmail'];
         $login_pass = $_POST['loginInputPassword'];
         
         // DB query
-        $sentencia = $conexion->prepare("SELECT dni, password FROM User WHERE dni = ?");
-        $sentencia->bindParam(1, $dni, PDO::PARAM_STR, 9);
+        $sentencia = $conexion->prepare("SELECT email, password FROM User WHERE email = ?");
+        $sentencia->bindParam(1, $email);
         $sentencia->execute();
 
         // Query result
-        $user = $sentencia->fetchAll();
-        $userPass = $user[0]['password'];
+        $user = $sentencia->fetch();
+        $userPass = $user['password'];
 
         if (password_verify($login_pass, $userPass)){
-            $_SESSION["user"] = $dni;
+            $_SESSION["user"] = $email;
             header("Location: ../index.php");
         }
 
@@ -86,8 +86,8 @@ include "./parts/header.php"; ?>
                                     <form action="login.php" method="post" class="user">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
-                                                id="loginInputDni" name="loginInputDni" aria-describedby="emailHelp"
-                                                placeholder="DNI">
+                                                id="loginInputEmail" name="loginInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Email">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
@@ -114,14 +114,14 @@ include "./parts/header.php"; ?>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../js/sb-admin-2.min.js"></script>
 
 </body>
 
