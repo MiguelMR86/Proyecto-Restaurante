@@ -19,9 +19,9 @@
         // Show result
         foreach($reserveData as $key){
             ?>
-            <div class="card shadow w-50 m-4 border-left-primary">
+            <div class="card shadow w-50 m-4 border-left-info">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Email: <?= $key['email']; ?></h6>
+                    <h6 class="m-0 font-weight-bold text-info">Email: <?= $key['email']; ?></h6>
                 </div>
                 <div class="card-body">
                     <p><b class="mr-1">Name:</b> <?= $key['name']; ?></p>
