@@ -142,6 +142,24 @@ include '../controllers/adminCheck.php';
                 </div>
                 <?php } ?>
 
+                <!-- Admin Show Tables -->
+                <?php if ($admin){ ?>
+                <!-- Begin Page Content -->
+                <div class="container-fluid d-flex justify-content-center w-100 p-5">
+                    <div class="row w-75 d-flex justify-content-center align-items-start pl-5">
+                            <!-- Show Booking  -->
+                            <?php
+                            include '../controllers/showNoAdmin.php';
+                            ?>
+                    </div>
+                    <div class="row w-75 d-flex justify-content-center align-items-start pr-5">
+                            <!-- Show Booking  -->
+                            <?php
+                            include '../controllers/showAdmin.php';
+                            ?>
+                    </div>
+                </div>
+                <?php } ?>
             </div>
 
             <?php if(!$admin)?>
