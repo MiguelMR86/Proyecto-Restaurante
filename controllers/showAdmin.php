@@ -14,33 +14,22 @@
         $sentencia->execute();
 
         // Query result
-        $reserveData = $sentencia->fetchAll();
+        $clients = $sentencia->fetchAll();
         
         // Show result
-        foreach($reserveData as $key){
+        foreach($clients as $key){
             ?>
-            <div class="card shadow w-50 m-4 border-left-info">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-info">Email: <?= $key['email']; ?></h6>
+            <div class="card shadow w-75 m-4 border-left-info">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center flex-wrap">
+                    <h5 class="m-0 font-weight-bold text-info"><?= $key['email']; ?></h5>
+                    <a href="./delete.php?id=<?=$key["email"]?>" class="btn btn-danger btn-icon-split m-1">
+                        <span class="text">Delete</span>
+                    </a>
                 </div>
                 <div class="card-body">
                     <p><b class="mr-1">Name:</b> <?= $key['name']; ?></p>
                     <p><b class="mr-1">Lastname:</b> <?= $key['lastname']; ?></p>
                     <p><b class="mr-1">Phone:</b> <?= $key['telephone']; ?></p>
-                    <p><b class="mr-1">Admin:</b> <?= $key['admin']; ?></p>
-                    <p><b class="mr-1">Password:</b> <?= $key['password']; ?></p>
-                    <div>
-                       
-                    </div>
-                </div>
-            </div>
-            <?php
-        }
-        if (!$reserveData){
-            ?>
-            <div class="card shadow w-50 m-4 border-left-primary">
-                <div class="card-header py-3">
-                    <i>You have not made reservations yet</i>   
                 </div>
             </div>
             <?php
