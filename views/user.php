@@ -145,14 +145,14 @@ include '../controllers/adminCheck.php';
                 <!-- Admin Show Tables -->
                 <?php if ($admin){ ?>
                 <!-- Begin Page Content -->
-                <div class="container-fluid d-flex justify-content-center w-100 p-5">
-                    <div class="row w-75 d-flex justify-content-center align-items-start pl-5">
+                <div class="container-fluid d-flex justify-content-center w-100 flex-wrap">
+                    <div class="row w-50 d-flex justify-content-center align-items-start">
                             <!-- Show Booking  -->
                             <?php
                             include '../controllers/showNoAdmin.php';
                             ?>
                     </div>
-                    <div class="row w-75 d-flex justify-content-center align-items-start pr-5">
+                    <div class="row w-50 d-flex justify-content-center align-items-start">
                             <!-- Show Booking  -->
                             <?php
                             include '../controllers/showAdmin.php';

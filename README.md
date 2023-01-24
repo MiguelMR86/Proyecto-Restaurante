@@ -1,2 +1,7 @@
-# DOWNLOAD LINK
-https://startbootstrap.com/theme/sb-admin-2
+# Instalation
+Once you clone the repository you need to install the composer dependencies
+
+
+# Run
+You can run it just typing
+$ php -S localhost:3000
