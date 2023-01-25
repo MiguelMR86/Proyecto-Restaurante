@@ -38,7 +38,7 @@ if (isset($_SESSION["user"])){
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand <?= $admin ? 'navbar-primary bg-primary' :  'navbar-secondary bg-secondary'; ?> topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand <?= $admin ? 'navbar-primary bg-primary' :  'navbar-secondary bg-secondary'; ?> topbar  static-top shadow">
             <div class="container w-25"></div>
             <div class="container d-flex justify-content-center w-50">
                 <a class="navbar-brand text-light" href="index.php">Restaurant</a>
@@ -46,8 +46,8 @@ if (isset($_SESSION["user"])){
             <div class="container w-25 d-flex justify-content-end">
                 <div>
                 <?php if (!isset($_SESSION["user"])){ ?>
-                    <a class="btn btn-success shadow mr-2" href="./views/login.php">Sing In</a>
-                    <a class="btn btn-primary shadow" href="./views/register.php">Sing Up</a>
+                    <a class="btn btn-success shadow mr-2" href="./views/login.php">Sign In</a>
+                    <a class="btn btn-primary shadow" href="./views/register.php">Sign Up</a>
                 <?php }else{ ?>
                     <a class="btn btn-success shadow mr-2" href="./views/user.php">Let's start!</a>
                 <?php } ?>
@@ -95,53 +95,25 @@ if (isset($_SESSION["user"])){
             </div>
         </nav>
 
-        <!-- Icons Grid-->
-        <section class="features-icons bg-light text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                            <h3>Fully Responsive</h3>
-                            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                            <h3>Bootstrap 5 Ready</h3>
-                            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                            <h3>Easy to Use</h3>
-                            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!-- Image Showcases-->
         <section class="showcase">
             <div class="container-fluid p-0">
                 <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('./img/bg-showcase-1.jpg')"></div>
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('./img/restaurant.png')"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2>Relax and take a seat</h2>
                         <p class="lead mb-0">Relax with the best views of Canary Islands!</p>
                     </div>
                 </div>
                 <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('./img/bg-showcase-2.jpg')"></div>
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('./img/restaurant-view.png')"></div>
                     <div class="col-lg-6 my-auto showcase-text">
                         <h2>The best restaurant to eat and relax</h2>
                         <p class="lead mb-0">Are you looking for a place where you can share your time with your familly and friends? Don't look further our restaurnt is your solution!</p>
                     </div>
                 </div>
                 <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('./img/bg-showcase-3.jpg')"></div>
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('./img/restaurant-view-2.png')"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2>Easy to Use & Customize</h2>
                         <p class="lead mb-0">You can customize your settings and preferences to have a better experience on our website. To make a reservation just sing up on the website and you will have full acces to our content!</p>
@@ -158,21 +130,21 @@ if (isset($_SESSION["user"])){
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="./img/testimonials-1.jpg" alt="..." />
                             <h5>Margaret E.</h5>
-                            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+                            <p class="font-weight-light mb-0">"Awesome! The best restaurant I've ever been, what what an experience!"</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="./img/testimonials-2.jpg" alt="..." />
                             <h5>Fred S.</h5>
-                            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+                            <p class="font-weight-light mb-0">"The restaurant is amazing. I have been coming for years and the service is still great."</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="./img/testimonials-3.jpg" alt="..." />
                             <h5>Sarah W.</h5>
-                            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+                            <p class="font-weight-light mb-0">"I just left and I already want to go back. I had never seen such a beautifull views"</p>
                         </div>
                     </div>
                 </div>
