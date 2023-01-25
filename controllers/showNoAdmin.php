@@ -54,7 +54,7 @@
                                 <p><b class="mr-1">Reserved Date:</b> <?= date("d-m-Y",strtotime($keyRes['reserveDate'])); ?></p>
                                 <p><b class="mr-1">Nº Companions:</b> <?= $keyRes['nclients']; ?></p>
                                 <div class="d-flex justify-content-center">
-                                    <a href="./admincancel.php?id= <?=$keyRes["id"]?>" class="btn btn-secondary btn-icon-split mb-1">
+                                    <a href="./admincancelreserve.php?id=<?=$keyRes["id"]?>&bemail=<?=$keyRes["bemail"]?>" class="btn btn-secondary btn-icon-split mb-1">
                                         <span class="text">Cancel</span>
                                     </a>
                                 </div>

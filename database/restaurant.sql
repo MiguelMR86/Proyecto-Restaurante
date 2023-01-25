@@ -15,7 +15,8 @@ CREATE TABLE IF NOT EXISTS Booking (
     id INT PRIMARY KEY AUTO_INCREMENT,
     bemail VARCHAR(100) NOT NULL,
     reserveDate DATE NOT NULL,
-    nclients INT NOT NULL
+    nclients INT NOT NULL,
+    FOREIGN KEY(bemail) REFERENCES User(email)
 );
 
 --  admin123

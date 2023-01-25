@@ -18,8 +18,8 @@
         $reserveList = $sentencia->fetchAll();
 
         $valid1 = $valid2 = true;
-        $today = date('d-m-Y');
-        $formatedUD = date('d-m-Y', strtotime($_POST['reserveDate']));
+        $today = strtotime(date('d-m-Y', time()));
+        $formatedUD = strtotime($_POST['reserveDate']);
 
         if ($formatedUD < $today) {
             $valid1 = false;
@@ -43,7 +43,7 @@
 
         } else if(!$valid1){
             $resultado['error'] = true;
-            $resultado['mensaje'] = 'You can only choose dates after '.$today;
+            $resultado['mensaje'] = 'You can only choose dates after '. date('d-m-Y');
         } else if(!$valid2){
             $resultado['error'] = true;
             $resultado['mensaje'] = 'You already make a reserve for that day';
