@@ -146,17 +146,19 @@ include '../controllers/adminCheck.php';
                 <?php if ($admin){ ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid d-flex justify-content-center w-100 flex-wrap">
-                    <div class="row w-50 d-flex justify-content-center align-items-start">
-                            <!-- Show Booking  -->
-                            <?php
-                            include '../controllers/showNoAdmin.php';
-                            ?>
+                    <div class="row w-50 d-flex justify-content-center align-self-start align-items-start">      
+                        <h1 class="w-100 text-center">Clients</h1>
+                        <!-- Show Booking  -->
+                        <?php
+                        include '../controllers/showNoAdmin.php';
+                        ?>
                     </div>
-                    <div class="row w-50 d-flex justify-content-center align-items-start">
-                            <!-- Show Booking  -->
-                            <?php
-                            include '../controllers/showAdmin.php';
-                            ?>
+                    <div class="row w-50 d-flex justify-content-center align-self-start align-items-start">
+                        <h1 class="w-100 text-center">Admins</h1>
+                        <!-- Show Booking  -->
+                        <?php
+                        include '../controllers/showAdmin.php';
+                        ?>
                     </div>
                 </div>
                 <?php } ?>

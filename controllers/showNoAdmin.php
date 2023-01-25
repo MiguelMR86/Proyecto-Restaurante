@@ -33,7 +33,7 @@
                         <p><b class="mr-1">Phone:</b> <?= $key['telephone']; ?></p>
                     </div>
                     <div class="card-header py-3 w-100 text-center">
-                        <h5 class="m-0 font-weight-bold text-success">Reservas</h5>
+                        <h5 class="m-0 font-weight-bold text-success">Reservations</h5>
                     </div>
                     <?php
                     // DB query
@@ -43,6 +43,7 @@
 
                     // Query result
                     $reserveData = $sentencia->fetchAll();
+
                     // Show result
                     foreach($reserveData as $keyRes){
                         ?>
