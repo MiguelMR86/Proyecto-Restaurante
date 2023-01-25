@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Booking (
     bemail VARCHAR(100) NOT NULL,
     reserveDate DATE NOT NULL,
     nclients INT NOT NULL,
-    FOREIGN KEY(bemail) REFERENCES User(email)
+    FOREIGN KEY(bemail) REFERENCES User(email) ON DELETE CASCADE
 );
 
 --  admin123
