@@ -1,4 +1,8 @@
 <?php
+    /** 
+     * Controller that returns a user data
+     * 
+     */
     $bookingResult = [
         'error' => false,
         'mensaje' => 'Reservas comprobadas con exito'
@@ -9,7 +13,7 @@
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
         
-        // DB query
+        /** DB query User Booking */ 
         $sentencia = $conexion->prepare("SELECT id, bemail, reserveDate, nclients FROM Booking WHERE bemail = ?");
         $sentencia->bindParam(1, $_SESSION["user"], PDO::PARAM_STR);
         $sentencia->execute();

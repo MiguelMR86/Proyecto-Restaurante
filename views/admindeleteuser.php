@@ -10,18 +10,15 @@ if (!isset($_SESSION["user"])) {
     header('Location: ../views/login.php');
 }
 
-if (isset($_GET["id"])){
-    $id = $_GET["id"];
-    $bemail = $_GET["bemail"];
+if (isset($_GET["email"])){
+    $email = $_GET["email"];
 }
 
-if (isset($_POST["id"])){
-    $id = $_POST["id"];
-    $bemail = $_POST["bemail"];
-}
+if (isset($_POST["email"])){
+    $email = $_POST["email"];}
 
 if(isset($_POST['deleteSubmit'])){
-    include '../controllers/adminDeleteReserve.php';
+    include '../controllers/adminRemoveUser.php';
 }
 
 include '../controllers/adminCheck.php';
@@ -129,12 +126,11 @@ include '../controllers/adminCheck.php';
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Are you sure you want to cancel <p class="text-primary mt-2"><?=$bemail?></p> reservation?</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Are you sure you want to delete the user <p class="text-primary mt-2"><?=$email?></p>?</h1>
                                 </div>
-                                <form action="admincancelreserve.php" method="post" class="user">
+                                <form action="admindeleteuser.php" method="post" class="user">
                                     <div class="form-group d-flex">
-                                        <input name="id" id="id" type="hidden" value="<?= $id ?>">
-                                        <input name="bemail" id="bemail" type="hidden" value="<?= $bemail ?>">
+                                        <input name="email" id="email" type="hidden" value="<?= $email ?>">
                                         <button type="submit" id="deleteSubmit" name="deleteSubmit" class="btn btn-danger btn-user btn-block m-1">
                                             Delete
                                         </button>

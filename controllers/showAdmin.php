@@ -22,9 +22,6 @@
             <div class="card shadow w-75 m-4 border-left-info">
                 <div class="card-header py-3 d-flex justify-content-between align-items-center flex-wrap">
                     <h5 class="m-0 font-weight-bold text-info"><?= $key['email']; ?></h5>
-                    <a href="./delete.php?id=<?=$key["email"]?>" class="btn btn-danger btn-icon-split m-1">
-                        <span class="text">Delete</span>
-                    </a>
                 </div>
                 <div class="card-body">
                     <p><b class="mr-1">Name:</b> <?= $key['name']; ?></p>

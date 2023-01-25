@@ -38,7 +38,7 @@ if (isset($_SESSION["user"])){
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand navbar-secondary bg-secondary topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand <?= $admin ? 'navbar-primary bg-primary' :  'navbar-secondary bg-secondary'; ?> topbar mb-4 static-top shadow">
             <div class="container w-25"></div>
             <div class="container d-flex justify-content-center w-50">
                 <a class="navbar-brand text-light" href="index.php">Restaurant</a>
@@ -180,7 +180,7 @@ if (isset($_SESSION["user"])){
         </section>
                
         <!-- Footer -->
-        <footer class="text-center p-4 bg-secondary text-light" style="background-color: rgba(0, 0, 0, 0.05);">
+        <footer class="text-center p-4 <?= $admin ? 'bg-primary' :  'bg-secondary'; ?> text-light" style="background-color: rgba(0, 0, 0, 0.05);">
                 © 2023 Copyright:
                 <a class="text-reset fw-bold" href="https://github.com/MiguelMR86">MiguelMR86</a>
             </footer>
