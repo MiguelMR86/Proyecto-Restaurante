@@ -1,4 +1,9 @@
 <?php
+    /** 
+     * Controller that checks users llog
+     * @package Login-Controller
+     * @version 1.0
+     */
 $resultado = [
     'error' => false,
     'mensaje' => 'El usuario se ha sido logeado con exito'

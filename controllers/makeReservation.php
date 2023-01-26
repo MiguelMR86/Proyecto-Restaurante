@@ -1,4 +1,9 @@
 <?php
+    /** 
+     * Controller that make a user reservation
+     * @package User-Controller
+     * @version 1.0
+     */
     $resultado = [
         'error' => false,
         'mensaje' => 'La reserva se completo con exito'

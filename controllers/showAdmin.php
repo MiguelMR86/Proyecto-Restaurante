@@ -1,4 +1,9 @@
 <?php
+    /** 
+     * Controller that returns admins data
+     * @package Admin-Controller
+     * @version 1.0
+     */
     $bookingResult = [
         'error' => false,
         'mensaje' => 'Reservas comprobadas con exito'

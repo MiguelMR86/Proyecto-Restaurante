@@ -1,4 +1,9 @@
 <?php
+    /** 
+     * Controller that check if user is admin
+     * @package Admin-Controller
+     * @version 1.0
+     */
     define('ROOT_PATH', dirname(__FILE__).'\\');
     define('INDEX_PATH', ROOT_PATH.'/index.php');
 

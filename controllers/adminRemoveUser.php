@@ -1,4 +1,9 @@
 <?php
+/** 
+     * Controller that removes a user
+     * @package Admin-Controller
+     * @version 1.0
+     */
     $resultado = [
         'error' => false,
         'mensaje' => 'La reserva se cancelo con exito'

@@ -1,4 +1,9 @@
 <?php
+    /** 
+     * Controller that returns a user data
+     * @package Register-Controller
+     * @version 1.0
+     */
 $resultado = [
     'error' => false,
     'mensaje' => 'El usuario ' . $_POST['registerFirstName'] . ' ha sido agregado con exito'

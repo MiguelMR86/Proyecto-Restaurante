@@ -136,7 +136,7 @@ include '../controllers/adminCheck.php';
                     <div class="row d-flex justify-content-center">
                             <!-- Show Booking  -->
                             <?php
-                            include '../controllers/showUsers.php';
+                            include '../controllers/showUsersData.php';
                             ?>
                     </div>
                 </div>
@@ -150,7 +150,7 @@ include '../controllers/adminCheck.php';
                         <h1 class="w-100 text-center">Clients</h1>
                         <!-- Show Booking  -->
                         <?php
-                        include '../controllers/showNoAdmin.php';
+                        include '../controllers/showUsers.php';
                         ?>
                     </div>
                     <div class="row w-50 d-flex justify-content-center align-self-start align-items-start">

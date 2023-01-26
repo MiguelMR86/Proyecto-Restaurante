@@ -1,4 +1,9 @@
 <?php
+    /** 
+     * Controller that update a user data
+     * @package User-Controller
+     * @version 1.0
+     */
     $resultado = [
         'error' => false,
         'mensaje' => 'La reserva se actualizo con exito'
