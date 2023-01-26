@@ -31,7 +31,7 @@
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <button id="logoutSubmit" name="logoutSubmit"class="btn btn-primary" type="submit">Logout</button>
+                        <button id="logoutSubmit" name="logoutSubmit"class="btn btn-info" type="submit">Logout</button>
                     </div>
                 </div>
             </div>

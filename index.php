@@ -163,34 +163,6 @@ if (isset($_SESSION["user"])){
                 </div>
             </div>
         </section>
-               
-        <!-- Footer -->
-        <footer class="text-center p-4 <?= $admin ? 'bg-primary' :  'bg-secondary'; ?> text-light" style="background-color: rgba(0, 0, 0, 0.05);">
-                © 2023 Copyright:
-                <a class="text-reset fw-bold" href="https://github.com/MiguelMR86">MiguelMR86</a>
-            </footer>
-
-        <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <form action="index.php" method="post">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <button id="logoutSubmit" name="logoutSubmit"class="btn btn-primary" type="submit">Logout</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -201,21 +173,6 @@ if (isset($_SESSION["user"])){
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <!-- Bootstrap core JavaScript-->
-        <script src="./vendor/jquery/jquery.min.js"></script>
-        <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Core plugin JavaScript-->
-        <script src="./vendor/jquery-easing/jquery.easing.min.js"></script>
-
-        <!-- Custom scripts for all pages-->
-        <script src="./js/sb-admin-2.min.js"></script>
-
-        <!-- Page level plugins -->
-        <script src="./vendor/chart.js/Chart.min.js"></script>
-
-        <!-- Page level custom scripts -->
-        <script src="./js/demo/chart-area-demo.js"></script>
-        <script src="./js/demo/chart-pie-demo.js"></script>
+        <?php include "./views/parts/footer.php" ?>
     </body>
 </html>
