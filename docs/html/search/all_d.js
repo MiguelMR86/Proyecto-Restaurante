@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['update_2ephp_0',['update.php',['../update_8php.html',1,'']]],
-  ['updatereserve_2ephp_1',['updateReserve.php',['../update_reserve_8php.html',1,'']]],
-  ['user_2',['User',['../namespace_user.html',1,'']]],
-  ['user_2ephp_3',['user.php',['../user_8php.html',1,'']]]
+  ['try_0',['try',['../admin_check_8php.html#a8e80e94f4fcb2eca255a26b959d2d3e7',1,'try():&#160;adminCheck.php'],['../admin_delete_reserve_8php.html#abe4cc9788f52e49485473dc699537388',1,'try():&#160;adminDeleteReserve.php'],['../admin_remove_user_8php.html#abe4cc9788f52e49485473dc699537388',1,'try():&#160;adminRemoveUser.php'],['../delete_reserve_8php.html#abe4cc9788f52e49485473dc699537388',1,'try():&#160;deleteReserve.php'],['../login_check_8php.html#abe4cc9788f52e49485473dc699537388',1,'try():&#160;loginCheck.php'],['../make_reservation_8php.html#abe4cc9788f52e49485473dc699537388',1,'try():&#160;makeReservation.php'],['../show_admin_8php.html#abe4cc9788f52e49485473dc699537388',1,'try():&#160;showAdmin.php'],['../show_users_8php.html#abe4cc9788f52e49485473dc699537388',1,'try():&#160;showUsers.php'],['../show_users_data_8php.html#abe4cc9788f52e49485473dc699537388',1,'try():&#160;showUsersData.php'],['../update_reserve_8php.html#abe4cc9788f52e49485473dc699537388',1,'try():&#160;updateReserve.php'],['../instalar_8php.html#abe4cc9788f52e49485473dc699537388',1,'try():&#160;instalar.php']]]
 ];

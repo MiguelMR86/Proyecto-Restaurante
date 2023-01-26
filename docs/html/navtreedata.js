@@ -24,10 +24,10 @@
 */
 var NAVTREE =
 [
-  [ "Dox-conf-proyecto-restuarente", "index.html", [
-    [ "Instalation", "md__r_e_a_d_m_e.html", [
-      [ "Run", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Composer", "md__r_e_a_d_m_e.html#autotoc_md2", null ]
+  [ "Restraurant-Conf", "index.html", [
+    [ "Instalation", "md__proyecto__restaurante__r_e_a_d_m_e.html", [
+      [ "Run", "md__proyecto__restaurante__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Composer", "md__proyecto__restaurante__r_e_a_d_m_e.html#autotoc_md2", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]

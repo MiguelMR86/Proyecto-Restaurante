@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['register_0',['Register',['../namespace_register.html',1,'']]]
+  ['login_0',['Login',['../namespace_login.html',1,'']]]
 ];

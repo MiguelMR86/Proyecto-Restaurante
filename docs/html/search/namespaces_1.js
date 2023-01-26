@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['login_0',['Login',['../namespace_login.html',1,'']]]
+  ['general_0',['General',['../namespace_general.html',1,'']]]
 ];
