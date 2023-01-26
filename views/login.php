@@ -1,10 +1,15 @@
 <?php
 session_start();
-
+/**
+ * If session exists, redirects to the index page
+ */
 if (isset($_SESSION["user"])){
     header("Location: ../index.php");
 }
 
+/**
+ * If POST request submit exists, includes the login controller
+ */
 if (isset($_POST['submitLogin'])){
     include "../controllers/loginCheck.php";
 }

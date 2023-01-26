@@ -26,6 +26,7 @@
         $today = strtotime(date('d-m-Y', time()));
         $formatedUD = strtotime($_POST['reserveDate']);
 
+        // Date check
         if ($formatedUD < $today) {
             $valid1 = false;
         }

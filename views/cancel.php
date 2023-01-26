@@ -10,10 +10,16 @@ if (!isset($_SESSION["user"])) {
     header('Location: ../views/login.php');
 }
 
+/**
+ * If GET request with an id exists, saves an id
+ */
 if (isset($_GET["id"])){
     $id = $_GET["id"];
 }
 
+/**
+ * If POST request submit exists, includes the delete reservation controller
+ */
 if(isset($_POST['deleteSubmit'])){
     include '../controllers/deleteReserve.php';
 }

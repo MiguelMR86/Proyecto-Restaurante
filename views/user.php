@@ -1,16 +1,22 @@
 <?php
 session_start();
-
+/** 
+ * If exist POST request of the log out, and destroy the session
+ */
 if (isset($_POST['logoutSubmit'])){
     session_destroy();
     header('Location: ../views/user.php');
 }
-
+/** 
+ * If the session does not exist the page will redirect to the login page
+ */
 if (!isset($_SESSION["user"])){
     header('Location: ../views/login.php');
 }
 
-// Reservation Check
+/** 
+ * If exist POST request of a reservation, includes the make reservation controller
+ */
 if (isset($_POST['reservationSubmit'])){
     include '../controllers/makeReservation.php';
 }
@@ -114,6 +120,9 @@ include '../controllers/adminCheck.php';
                 
                 <!-- Show Result -->
                 <?php
+                    /** 
+                     * If the databese returns a result, the result show up
+                     */ 
                     if (isset($resultado)){
                     ?>
                     <div class="container mt-3">
@@ -130,7 +139,12 @@ include '../controllers/adminCheck.php';
                 ?>
 
                 <!-- User Show Booking -->
-                <?php if (!$admin){ ?>
+                
+                <?php
+                /** 
+                 * If you are not an admin you have this view
+                 */ 
+                if (!$admin){ ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="row d-flex justify-content-center">
@@ -143,7 +157,11 @@ include '../controllers/adminCheck.php';
                 <?php } ?>
 
                 <!-- Admin Show Tables -->
-                <?php if ($admin){ ?>
+                <?php 
+                /** 
+                 * If you are an admin you have this view
+                 */ 
+                if ($admin){ ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid d-flex justify-content-center w-100 flex-wrap">
                     <div class="row w-50 d-flex justify-content-center align-self-start align-items-start">      

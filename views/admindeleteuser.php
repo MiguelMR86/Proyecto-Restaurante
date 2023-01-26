@@ -10,13 +10,22 @@ if (!isset($_SESSION["user"])) {
     header('Location: ../views/login.php');
 }
 
+/**
+ * If GET request with an email exists, saves an email
+ */
 if (isset($_GET["email"])){
     $email = $_GET["email"];
 }
 
+/**
+ * If POST request with an id exists, saves an id
+ */
 if (isset($_POST["email"])){
     $email = $_POST["email"];}
 
+/**
+ * If POST request submit, includes the admin remove user controller
+ */
 if(isset($_POST['deleteSubmit'])){
     include '../controllers/adminRemoveUser.php';
 }

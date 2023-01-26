@@ -1,11 +1,24 @@
 <?php
+/**
+ * @author Miguel Ángel Medina Ramírez
+ * @version 1.0
+ * @package General
+ * @Date: 2023-01-26
+ * @email: migueliberto86@gmail.com
+ * @Github:https://github.com/MiguelMR86
+ */
 session_start();
-
+/** 
+ * If exist POST request of the log out, and destroy the session
+ */
 if (isset($_POST['logoutSubmit'])){
     session_destroy();
     header('Location: ./index.php');
 }
-
+/** 
+ * If exist a SESSION user, includes the database config (Environment Variables)
+ * and admin check validates that you are an administrator
+ */
 if (isset($_SESSION["user"])){
     $config = include './database/config.php';
     include './controllers/adminCheck.php';

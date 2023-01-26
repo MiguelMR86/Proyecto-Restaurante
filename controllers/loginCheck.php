@@ -27,6 +27,7 @@ try {
     $user = $sentencia->fetch();
     $userPass = $user['password'];
 
+    // Password verification 
     if (password_verify($login_pass, $userPass)){
         $_SESSION["user"] = $email;
         header("Location: ../index.php");

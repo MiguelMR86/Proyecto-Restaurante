@@ -10,16 +10,25 @@ if (!isset($_SESSION["user"])) {
     header('Location: ../views/login.php');
 }
 
+/**
+ * If GET request with an id exists, saves an id and an email
+ */
 if (isset($_GET["id"])){
     $id = $_GET["id"];
     $bemail = $_GET["bemail"];
 }
 
+/**
+ * If POST request with an id exists, saves an id and an email
+ */
 if (isset($_POST["id"])){
     $id = $_POST["id"];
     $bemail = $_POST["bemail"];
 }
 
+/**
+ * If POST request submit, includes admin deletes reservations controller
+ */
 if(isset($_POST['deleteSubmit'])){
     include '../controllers/adminDeleteReserve.php';
 }

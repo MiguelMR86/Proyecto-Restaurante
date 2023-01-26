@@ -10,12 +10,19 @@ if (!isset($_SESSION["user"])) {
     header('Location: ../views/login.php');
 }
 
+/** 
+ * If there is a GET request with an id, saves an id, date and number of clients
+ */ 
 if (isset($_GET["id"])){
     $id = $_GET["id"];
     $reserveDate = $_GET["reserveDate"];
     $nclients = $_GET["nclients"];
 }
 
+/** 
+ * If there is a POST request of submit, saves an id, date and number of clients, and includes the
+ * update controller
+ */ 
 if(isset($_POST['updateSubmit'])){
     $id = $_POST['id'];
     $reserveDate = $_POST['updateDate'];

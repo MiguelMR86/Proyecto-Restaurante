@@ -13,6 +13,7 @@
         'mensaje' => 'El usuario se ha logeado correctamente'
     ];
     
+    // If database config does not exist, Includes a default config
     if (!isset($config)){
         $config = include '../database/config.php';
     }    
