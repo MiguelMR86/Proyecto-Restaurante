@@ -25,17 +25,22 @@ try {
 
     // Query result
     $user = $sentencia->fetch();
-    $userPass = $user['password'];
+    if ($user){
+        $userPass = $user['password'];
 
-    // Password verification 
-    if (password_verify($login_pass, $userPass)){
-        $_SESSION["user"] = $email;
-        header("Location: ../index.php");
-    }
+        // Password verification 
+        if (password_verify($login_pass, $userPass)){
+            $_SESSION["user"] = $email;
+            header("Location: ../index.php");
+        }
 
-    else{
+        else{
+            $resultado['error'] = true;
+            $resultado['mensaje'] = 'Wrong password';
+        }
+    }else{
         $resultado['error'] = true;
-        $resultado['mensaje'] = 'Wrong password';
+        $resultado['mensaje'] = 'That user does not exist';
     }
     
 
