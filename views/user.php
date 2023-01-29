@@ -217,8 +217,6 @@ include '../controllers/adminCheck.php';
                     </div>
                 </form>
             </div>
-
-            <?php?>
             <!-- End of Main Content -->
 
 <?php include("./parts/footer.php") ?>
