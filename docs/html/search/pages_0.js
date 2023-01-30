@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['instalation_0',['Instalation',['../md__proyecto__restaurante__r_e_a_d_m_e.html',1,'']]]
+  ['restaurant_2dproject_0',['Restaurant-Project',['../md__r_e_a_d_m_e.html',1,'']]]
 ];

@@ -24,10 +24,16 @@
 */
 var NAVTREE =
 [
-  [ "Restraurant-Conf", "index.html", [
-    [ "Instalation", "md__proyecto__restaurante__r_e_a_d_m_e.html", [
-      [ "Run", "md__proyecto__restaurante__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Composer", "md__proyecto__restaurante__r_e_a_d_m_e.html#autotoc_md2", null ]
+  [ "Project-Restaurant", "index.html", [
+    [ "Restaurant-Project", "md__r_e_a_d_m_e.html", [
+      [ "Overview", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Instalation", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Run", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "Usage (not logged)", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Usage (client and admin)", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "Author", "md__r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "Deploy Link", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
+      [ "Documentation", "md__r_e_a_d_m_e.html#autotoc_md8", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
@@ -36,6 +42,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
         [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ]
       ] ]
     ] ]

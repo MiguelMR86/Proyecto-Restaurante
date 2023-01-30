@@ -34,11 +34,11 @@ var menudata={children:[
 {text:"$",url:"globals.html#index__24"},
 {text:"e",url:"globals.html#index_e"},
 {text:"i",url:"globals.html#index_i"},
-{text:"r",url:"globals.html#index_r"},
-{text:"t",url:"globals.html#index_t"}]},
+{text:"t",url:"globals.html#index_t"},
+{text:"v",url:"globals.html#index_v"}]},
+{text:"Functions",url:"globals_func.html"},
 {text:"Variables",url:"globals_vars.html",children:[
 {text:"$",url:"globals_vars.html#index__24"},
 {text:"e",url:"globals_vars.html#index_e"},
 {text:"i",url:"globals_vars.html#index_i"},
-{text:"r",url:"globals_vars.html#index_r"},
 {text:"t",url:"globals_vars.html#index_t"}]}]}]}]}

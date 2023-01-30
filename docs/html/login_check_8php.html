@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Restraurant-Conf: Proyecto-Restaurante/controllers/loginCheck.php File Reference</title>
+<title>Project-Restaurant: controllers/loginCheck.php File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Restraurant-Conf<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">Project-Restaurant<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">This is all the conf and comments of my projects</div>
+   <div id="projectbrief">Description of a the content</div>
   </td>
  </tr>
  </tbody>
@@ -116,16 +116,8 @@ Variables</h2></td></tr>
 <tr class="separator:ad634f418b20382e2802f80532d76d3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cc2dd134b07ffb2dc117d8113eb7670"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_check_8php.html#a5cc2dd134b07ffb2dc117d8113eb7670">$login_pass</a> = $_POST['loginInputPassword']</td></tr>
 <tr class="separator:a5cc2dd134b07ffb2dc117d8113eb7670"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac17e34e2481aba4d112054122cb09b8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_check_8php.html#ac17e34e2481aba4d112054122cb09b8d">$sentencia</a> = $conexion-&gt;prepare(&quot;SELECT email, password FROM User WHERE email = ?&quot;)</td></tr>
-<tr class="separator:ac17e34e2481aba4d112054122cb09b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a598ca4e71b15a1313ec95f0df1027ca5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_check_8php.html#a598ca4e71b15a1313ec95f0df1027ca5">$user</a> = $sentencia-&gt;fetch()</td></tr>
-<tr class="separator:a598ca4e71b15a1313ec95f0df1027ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeacb6061312af70dee743de6828b2ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_check_8php.html#adeacb6061312af70dee743de6828b2ac">$userPass</a> = $user['password']</td></tr>
-<tr class="separator:adeacb6061312af70dee743de6828b2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3626f6b669d067edafbdec975bd1b641"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_8php.html#accd12d84146cf66813bcd25cb247442e">if</a>(password_verify($login_pass, $userPass))&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_check_8php.html#a3626f6b669d067edafbdec975bd1b641">else</a></td></tr>
-<tr class="separator:a3626f6b669d067edafbdec975bd1b641"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa33dae89bfbbc664071fb95fc37e613d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_check_8php.html#aa33dae89bfbbc664071fb95fc37e613d">$resultado</a> ['mensaje'] = 'Wrong password'</td></tr>
-<tr class="separator:aa33dae89bfbbc664071fb95fc37e613d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0587674d27d00ef497e08e53ccf45bbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_check_8php.html#a0587674d27d00ef497e08e53ccf45bbb">$valid</a> = true</td></tr>
+<tr class="separator:a0587674d27d00ef497e08e53ccf45bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a881924afaecbe8ee5c0d26174a1e8081" name="a881924afaecbe8ee5c0d26174a1e8081"></a>
@@ -185,7 +177,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a06face0ef35c41554d8f4fe115363f58" name="a06face0ef35c41554d8f4fe115363f58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06face0ef35c41554d8f4fe115363f58">&#9670;&#160;</a></span>$resultado <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a06face0ef35c41554d8f4fe115363f58">&#9670;&#160;</a></span>$resultado</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,83 +188,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= [</div>
-<div class="line">    <span class="stringliteral">&#39;error&#39;</span> =&gt; <span class="keyword">false</span>,</div>
-<div class="line">    <span class="stringliteral">&#39;mensaje&#39;</span> =&gt; <span class="stringliteral">&#39;El usuario se ha sido logeado con exito&#39;</span></div>
-<div class="line">]</div>
+<div class="line">        <span class="stringliteral">&#39;error&#39;</span> =&gt; <span class="keyword">false</span>,</div>
+<div class="line">        <span class="stringliteral">&#39;mensaje&#39;</span> =&gt; <span class="stringliteral">&#39;El usuario se ha sido logeado con exito&#39;</span></div>
+<div class="line">    ]</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aa33dae89bfbbc664071fb95fc37e613d" name="aa33dae89bfbbc664071fb95fc37e613d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa33dae89bfbbc664071fb95fc37e613d">&#9670;&#160;</a></span>$resultado <span class="overload">[2/2]</span></h2>
+<a id="a0587674d27d00ef497e08e53ccf45bbb" name="a0587674d27d00ef497e08e53ccf45bbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0587674d27d00ef497e08e53ccf45bbb">&#9670;&#160;</a></span>$valid</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$resultado[ 'mensaje'] = 'Wrong password'</td>
+          <td class="memname">$valid = true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ac17e34e2481aba4d112054122cb09b8d" name="ac17e34e2481aba4d112054122cb09b8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac17e34e2481aba4d112054122cb09b8d">&#9670;&#160;</a></span>$sentencia</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$sentencia = $conexion-&gt;prepare(&quot;SELECT email, password FROM User WHERE email = ?&quot;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a598ca4e71b15a1313ec95f0df1027ca5" name="a598ca4e71b15a1313ec95f0df1027ca5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a598ca4e71b15a1313ec95f0df1027ca5">&#9670;&#160;</a></span>$user</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$user = $sentencia-&gt;fetch()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adeacb6061312af70dee743de6828b2ac" name="adeacb6061312af70dee743de6828b2ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adeacb6061312af70dee743de6828b2ac">&#9670;&#160;</a></span>$userPass</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$userPass = $user['password']</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3626f6b669d067edafbdec975bd1b641" name="a3626f6b669d067edafbdec975bd1b641"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3626f6b669d067edafbdec975bd1b641">&#9670;&#160;</a></span>else</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="index_8php.html#accd12d84146cf66813bcd25cb247442e">if</a> (password_verify( $login_pass, $userPass)) else</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">        <a class="code hl_variable" href="login_check_8php.html#a06face0ef35c41554d8f4fe115363f58">$resultado</a>[<span class="stringliteral">&#39;error&#39;</span>] = <span class="keyword">true</span></div>
-<div class="ttc" id="alogin_check_8php_html_a06face0ef35c41554d8f4fe115363f58"><div class="ttname"><a href="login_check_8php.html#a06face0ef35c41554d8f4fe115363f58">$resultado</a></div><div class="ttdeci">$resultado</div><div class="ttdef"><b>Definition:</b> loginCheck.php:7</div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="abe4cc9788f52e49485473dc699537388" name="abe4cc9788f52e49485473dc699537388"></a>
@@ -287,8 +220,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    $dsn = <span class="stringliteral">&#39;mysql:host=&#39;</span> . <a class="code hl_variable" href="login_check_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a>[<span class="stringliteral">&#39;db&#39;</span>][<span class="stringliteral">&#39;host&#39;</span>] . <span class="stringliteral">&#39;;dbname=&#39;</span> . <a class="code hl_variable" href="login_check_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a>[<span class="stringliteral">&#39;db&#39;</span>][<span class="stringliteral">&#39;name&#39;</span>]</div>
-<div class="ttc" id="alogin_check_8php_html_a49c7011be9c979d9174c52a8b83e5d8e"><div class="ttname"><a href="login_check_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a></div><div class="ttdeci">$config</div><div class="ttdef"><b>Definition:</b> loginCheck.php:11</div></div>
+<div class="line">        $dsn = <span class="stringliteral">&#39;mysql:host=&#39;</span> . <a class="code hl_variable" href="login_check_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a>[<span class="stringliteral">&#39;db&#39;</span>][<span class="stringliteral">&#39;host&#39;</span>] . <span class="stringliteral">&#39;;dbname=&#39;</span> . <a class="code hl_variable" href="login_check_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a>[<span class="stringliteral">&#39;db&#39;</span>][<span class="stringliteral">&#39;name&#39;</span>]</div>
+<div class="ttc" id="alogin_check_8php_html_a49c7011be9c979d9174c52a8b83e5d8e"><div class="ttname"><a href="login_check_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a></div><div class="ttdeci">$config</div><div class="ttdef"><b>Definition:</b> loginCheck.php:14</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -297,7 +230,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a5e0532bd419ee00dd791cb1a894a403.html">Proyecto-Restaurante</a></li><li class="navelem"><a class="el" href="dir_2abd951a6df29810d4f74b13a1a78f7a.html">controllers</a></li><li class="navelem"><a class="el" href="login_check_8php.html">loginCheck.php</a></li>
+    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="login_check_8php.html">loginCheck.php</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>
