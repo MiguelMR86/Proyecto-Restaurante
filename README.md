@@ -53,3 +53,6 @@ $'php -S localhost:8000'
 
 3. As an admin, you will have access to all the information of all users, and also you 
    can update them and remove them from the database.
+
+## Author
+- Miguel Ángel Medina Ramírez
