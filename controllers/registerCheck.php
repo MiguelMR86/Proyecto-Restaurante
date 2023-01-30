@@ -39,6 +39,11 @@
                 $resultado['error'] = true;
                 $resultado['mensaje'] = "Please, for your security, enter an 8-character password";
             }
+            else if (!validatePhone($_POST['registerInputTel'])){
+                $valid = false;
+                $resultado['error'] = true;
+                $resultado['mensaje'] = "Please, phone number must have 9 digits, without spaces";
+            }
 
             
             if ($valid){

@@ -4,48 +4,61 @@
      * @package Login-Controller
      * @version 1.0
      */
-$resultado = [
-    'error' => false,
-    'mensaje' => 'El usuario se ha sido logeado con exito'
-];
-$config = include '../database/config.php';
 
-try {
-    $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
-    $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
+     include '../functions/functions.php';
 
-    // Login parameters
-    $email = $_POST['loginInputEmail'];
-    $login_pass = $_POST['loginInputPassword'];
-    
-    // DB query
-    $sentencia = $conexion->prepare("SELECT email, password FROM User WHERE email = ?");
-    $sentencia->bindParam(1, $email);
-    $sentencia->execute();
+    $resultado = [
+        'error' => false,
+        'mensaje' => 'El usuario se ha sido logeado con exito'
+    ];
+    $config = include '../database/config.php';
 
-    // Query result
-    $user = $sentencia->fetch();
-    if ($user){
-        $userPass = $user['password'];
+    try {
+        $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
+        $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
-        // Password verification 
-        if (password_verify($login_pass, $userPass)){
-            $_SESSION["user"] = $email;
-            header("Location: ../index.php");
-        }
+        // Login parameters
+        $email = $_POST['loginInputEmail'];
+        $login_pass = $_POST['loginInputPassword'];
 
-        else{
+        $valid = true;
+
+        if (validateParamsErrors([$email, $login_pass])){
+            $valid = false;
             $resultado['error'] = true;
-            $resultado['mensaje'] = 'Wrong password';
+            $resultado['mensaje'] = "Please complete all of the params";
         }
-    }else{
-        $resultado['error'] = true;
-        $resultado['mensaje'] = 'That user does not exist';
-    }
-    
 
-} catch(PDOException $error){
-    $resultado['error'] = true;
-    $resultado['mensaje'] = $error->getMessage();
-}
+        if ($valid) {
+            // DB query
+            $sentencia = $conexion->prepare("SELECT email, password FROM User WHERE email = ?");
+            $sentencia->bindParam(1, $email);
+            $sentencia->execute();
+    
+            // Query result
+            $user = $sentencia->fetch();
+            if ($user){
+                $userPass = $user['password'];
+    
+                // Password verification 
+                if (password_verify($login_pass, $userPass)){
+                    $_SESSION["user"] = $email;
+                    header("Location: ../index.php");
+                }
+    
+                else{
+                    $resultado['error'] = true;
+                    $resultado['mensaje'] = 'Wrong password';
+                }
+            }else{
+                $resultado['error'] = true;
+                $resultado['mensaje'] = 'That user does not exist';
+            }
+        }
+        
+
+    } catch(PDOException $error){
+        $resultado['error'] = true;
+        $resultado['mensaje'] = $error->getMessage();
+    }
 ?>

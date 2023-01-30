@@ -21,4 +21,13 @@ function validatePassword(string $password) {
     return $valid;
 }
 
+function validatePhone(string $phone) {
+    $valid = true;
+    if (strlen($phone) !== 9){
+        $valid = false;
+        return $valid;
+    }
+    return $valid;
+}
+
 ?>
