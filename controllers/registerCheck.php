@@ -31,6 +31,10 @@
                 $resultado['error'] = true;
                 $resultado['mensaje'] = "Please complete all of the params";
             }
+            else if (validateParamsErrors($cliente["password"])){
+                $resultado['error'] = true;
+                $resultado['mensaje'] = "Please, for your security, enter an 8-character password";
+            }
             else{
                 // DB query Check Insert
                 $sentencia = $conexion->prepare("SELECT email FROM User WHERE email = ?");
