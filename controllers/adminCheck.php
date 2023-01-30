@@ -4,8 +4,6 @@
      * @package Admin-Controller
      * @version 1.0
      */
-    define('ROOT_PATH', dirname(__FILE__).'\\');
-    define('INDEX_PATH', ROOT_PATH.'/index.php');
 
     // Admin check
     $adminResult = [
