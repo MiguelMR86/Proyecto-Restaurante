@@ -57,6 +57,8 @@ $'php -S localhost:8000'
 ## Author
 - Miguel Ángel Medina Ramírez
 
-
 ## Deploy Link
 - https://restaurant-project.herokuapp.com/index.php
+
+## Documentation
+- https://restaurant-project.herokuapp.com/docs/html/
