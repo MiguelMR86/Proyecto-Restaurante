@@ -31,7 +31,7 @@
                 $resultado['error'] = true;
                 $resultado['mensaje'] = "Please complete all of the params";
             }
-            else if (validateParamsErrors($cliente["password"])){
+            if (!validatePassword($cliente["password"])){
                 $resultado['error'] = true;
                 $resultado['mensaje'] = "Please, for your security, enter an 8-character password";
             }
