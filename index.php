@@ -57,14 +57,13 @@ if (isset($_SESSION["user"])){
                 <a class="navbar-brand text-light" href="index.php">Restaurant</a>
             </div>
             <div class="container w-25 d-flex justify-content-end">
-                <div>
                 <?php if (!isset($_SESSION["user"])){ ?>
                     <a class="btn btn-success shadow mr-2" href="./views/login.php">Sign In</a>
                     <a class="btn btn-primary shadow" href="./views/register.php">Sign Up</a>
                 <?php }else{ ?>
                     <a class="btn btn-success shadow mr-2" href="./views/user.php">Let's start!</a>
                 <?php } ?>
-                </div>
+            </div>
             
             
             <?php if (isset($_SESSION["user"])){ ?>
@@ -112,21 +111,21 @@ if (isset($_SESSION["user"])){
         <section class="showcase">
             <div class="container-fluid p-0">
                 <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('./img/restaurant.png')"></div>
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('./img/restaurant.png'); background-position: center;"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2>Relax and take a seat</h2>
                         <p class="lead mb-0">Relax with the best views of Canary Islands!</p>
                     </div>
                 </div>
                 <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('./img/restaurant-view.png')"></div>
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('./img/restaurant-view.png'); background-position: center;"></div>
                     <div class="col-lg-6 my-auto showcase-text">
                         <h2>The best restaurant to eat and relax</h2>
                         <p class="lead mb-0">Are you looking for a place where you can share your time with your familly and friends? Don't look further our restaurnt is your solution!</p>
                     </div>
                 </div>
                 <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('./img/restaurant-view-2.png')"></div>
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('./img/restaurant-view-2.png'); background-position: center;"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2>Easy to Use & Customize</h2>
                         <p class="lead mb-0">You can customize your settings and preferences to have a better experience on our website. To make a reservation just sing up on the website and you will have full acces to our content!</p>
@@ -166,8 +165,6 @@ if (isset($_SESSION["user"])){
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
