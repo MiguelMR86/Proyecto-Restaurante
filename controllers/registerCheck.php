@@ -27,15 +27,21 @@
                 "password" => password_hash($_POST['registerInputPassword'], PASSWORD_DEFAULT)
             );
 
+            $valid = true;
+
             if (validateParamsErrors($cliente)){
+                $valid = false;
                 $resultado['error'] = true;
                 $resultado['mensaje'] = "Please complete all of the params";
             }
-            if (!validatePassword($cliente["password"])){
+            else if (!validatePassword($_POST['registerInputPassword'])){
+                $valid = false;
                 $resultado['error'] = true;
                 $resultado['mensaje'] = "Please, for your security, enter an 8-character password";
             }
-            else{
+
+            
+            if ($valid){
                 // DB query Check Insert
                 $sentencia = $conexion->prepare("SELECT email FROM User WHERE email = ?");
                 $sentencia->bindParam(1, $cliente["email"], PDO::PARAM_STR);

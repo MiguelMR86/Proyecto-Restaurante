@@ -13,12 +13,12 @@ function validateParamsErrors(array $list) {
 }
 
 function validatePassword(string $password) {
-    $errorHandler = false;
+    $valid = true;
     if (strlen($password) < 8){
-        $errorHandler = true;
-        return $errorHandler;
+        $valid = false;
+        return $valid;
     }
-    return $errorHandler;
+    return $valid;
 }
 
 ?>
