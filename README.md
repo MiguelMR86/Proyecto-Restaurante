@@ -61,4 +61,4 @@ $'php -S localhost:8000'
 - https://restaurant-project.herokuapp.com/index.php
 
 ## Documentation
-- https://restaurant-project.herokuapp.com/docs/html/
+- https://restaurant-project.herokuapp.com/docs/html/index.html
