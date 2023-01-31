@@ -63,6 +63,7 @@ include '../controllers/adminCheck.php';
                     <a class="navbar-brand text-light" href="../index.php">Restaurant</a>
                     <div class="topbar-divider d-none d-sm-block"></div>
 
+                    <!-- Admin Dashboard -->
                     <?php if($admin){ ?>
                     <div class="w-50 d-flex justify-content-end">
                         <i class="fas fa-fw fa-tachometer-alt navbar-brand text-light"></i>
