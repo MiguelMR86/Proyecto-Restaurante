@@ -12,6 +12,7 @@ declare(strict_types=1);
  * Funtion to validate if the params are empty
  */
 function validateParamsErrors(array $list) {
+    // Receive an arrray and if one param is empty return true
     $errorHandler = false;
     
     foreach($list as $key){
@@ -27,6 +28,7 @@ function validateParamsErrors(array $list) {
  * Funtion to validate password length
  */
 function validatePassword(string $password) {
+    // Receive an string and if it is less than 8 characters return false
     $valid = true;
     if (strlen($password) < 8){
         $valid = false;
@@ -39,6 +41,7 @@ function validatePassword(string $password) {
  * Funtion to validate if phone number is 9 digits
  */
 function validatePhone(string $phone) {
+    // Receive an string and if it is not 9 digits return false
     $valid = true;
     if (strlen($phone) !== 9){
         $valid = false;
