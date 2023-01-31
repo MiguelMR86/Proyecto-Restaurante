@@ -56,17 +56,27 @@ if (isset($_SESSION["user"])){
             <div class="container d-flex justify-content-center w-50">
                 <a class="navbar-brand text-light" href="index.php">Restaurant</a>
             </div>
-            <div class="container w-25 d-flex justify-content-end">
+            <div class="container w-25 d-flex justify-content-end mr-4">
                 <?php if (!isset($_SESSION["user"])){ ?>
-                    <a class="btn btn-success shadow mr-2" href="./views/login.php">Sign In</a>
-                    <a class="btn btn-primary shadow" href="./views/register.php">Sign Up</a>
+                    <div class="drop dropdown">
+                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Access
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="btn btn-success shadow m-1 w-75" href="./views/login.php">Sign In</a>
+                            <a class="btn btn-primary shadow m-1 w-75" href="./views/register.php">Sign Up</a>                            
+                        </div>
+                    </div>
+                    <div class="undrop w-100">
+                        <a class="btn btn-success shadow m-1 w-75" href="./views/login.php">Sign In</a>
+                        <a class="btn btn-primary shadow m-1 w-75" href="./views/register.php">Sign Up</a>
+                    </div>
                 <?php }else{ ?>
                     <a class="btn btn-success shadow mr-2" href="./views/user.php">Let's start!</a>
                 <?php } ?>
-            </div>
             
             
-            <?php if (isset($_SESSION["user"])){ ?>
+                <?php if (isset($_SESSION["user"])){ ?>
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav">
 
@@ -103,13 +113,13 @@ if (isset($_SESSION["user"])){
                     </li>
 
                 </ul>
-            <?php } ?>
+                <?php } ?>
             </div>
         </nav>
 
         <!-- Image Showcases-->
         <section class="showcase">
-            <div class="container-fluid p-0">
+            <div class="container-fluid w-75 mt-6 mb-6">
                 <div class="row g-0">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('./img/restaurant.png'); background-position: center;"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
