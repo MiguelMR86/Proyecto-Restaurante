@@ -14,7 +14,7 @@
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
         
-        // DB query
+        // DB query to get admins
         $sentencia = $conexion->prepare("SELECT * FROM User WHERE admin = 1");
         $sentencia->execute();
 
