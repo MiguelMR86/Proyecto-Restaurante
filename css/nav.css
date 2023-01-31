@@ -13,11 +13,29 @@
     display: none !important;
 }
 
+
 @media (max-width: 800px) {
     .drop{
-        display: block !important;
+        display: flex !important;
+    }
+    .dropbar{
+        display: block;
     }
     .undrop{
         display: none !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .drop{
+        width: 100%;
+    }
+    .dropbar{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .mylink{
+        width: 45%;
     }
 }

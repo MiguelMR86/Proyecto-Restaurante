@@ -59,13 +59,13 @@ if (isset($_SESSION["user"])){
             </div>
             <div class="container w-25 d-flex justify-content-end mr-4">
                 <?php if (!isset($_SESSION["user"])){ ?>
-                    <div class="drop dropdown">
+                    <div class="drop dropdown w-100">
                         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Access
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="btn btn-success shadow m-1 w-75" href="./views/login.php">Sign In</a>
-                            <a class="btn btn-primary shadow m-1 w-75" href="./views/register.php">Sign Up</a>                            
+                        <div class="dropdown-menu dropbar" aria-labelledby="dropdownMenuButton">
+                            <a class="btn btn-success shadow m-2 mylink" href="./views/login.php">Sign In</a>
+                            <a class="btn btn-primary shadow m-2 mylink" href="./views/register.php">Sign Up</a>                            
                         </div>
                     </div>
                     <div class="undrop w-100">
