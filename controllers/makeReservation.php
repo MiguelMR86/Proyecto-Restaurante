@@ -30,7 +30,8 @@
         if ($formatedUD < $today) {
             $valid1 = false;
         }
-
+        
+        // Reserve check
         foreach($reserveList as $reserve){
             if($reserve['reserveDate'] === $_POST['reserveDate']){
                 $valid2 = false;
@@ -39,7 +40,7 @@
 
         // Insert new reserve
         if ($valid1 && $valid2){
-            // DB query Insert
+            // DB query to insert a new user reservation
             $sentencia = $conexion->prepare('INSERT INTO Booking (bemail, reserveDate, nclients) VALUES (?, ?, ?)');
             $sentencia->bindParam(1, $_SESSION['user'], PDO::PARAM_STR);
             $sentencia->bindParam(2, $_POST['reserveDate'], PDO::PARAM_STR);
