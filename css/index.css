@@ -11379,26 +11379,3 @@ footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-.mt-6{
-  margin-top: 5rem;
-}
-
-.mb-6{
-  margin-bottom: 5rem;
-}
-
-.undrop{
-  display: flex !important;
-}
-.drop{
-  display: none !important;
-}
-
-@media (max-width: 800px) {
-  .drop{
-    display: block !important;
-  }
-  .undrop{
-    display: none !important;
-  }
-}

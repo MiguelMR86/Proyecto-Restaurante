@@ -35,6 +35,7 @@ if (isset($_SESSION["user"])){
         <title>Landing Page - Start Bootstrap Theme</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+        <link rel="stylesheet" href="./css/nav.css">
         <!-- Custom fonts for this template-->
         <link href="./public/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <link
