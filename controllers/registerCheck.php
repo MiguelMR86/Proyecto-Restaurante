@@ -13,7 +13,7 @@
     ];
     $config = include '../database/config.php';
 
-    // Password check
+    // Password match check
     if ($_POST['registerInputPassword'] === $_POST['registerRepeatPassword']){
         try {
             $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
@@ -29,25 +29,29 @@
 
             $valid = true;
 
+            // Validate empty params
             if (validateParamsErrors($cliente)){
                 $valid = false;
                 $resultado['error'] = true;
                 $resultado['mensaje'] = "Please complete all of the params";
             }
+
+            // Validate password length
             else if (!validatePassword($_POST['registerInputPassword'])){
                 $valid = false;
                 $resultado['error'] = true;
                 $resultado['mensaje'] = "Please, for your security, enter an 8-character password";
             }
+
+            // Validate phone number length
             else if (!validatePhone($_POST['registerInputTel'])){
                 $valid = false;
                 $resultado['error'] = true;
                 $resultado['mensaje'] = "Please, phone number must have 9 digits, without spaces";
             }
 
-            
             if ($valid){
-                // DB query Check Insert
+                // DB query Check if user exists
                 $sentencia = $conexion->prepare("SELECT email FROM User WHERE email = ?");
                 $sentencia->bindParam(1, $cliente["email"], PDO::PARAM_STR);
                 $sentencia->execute();
@@ -55,9 +59,9 @@
                 // Query result
                 $dbUser = $sentencia->fetch();
     
-                // Insert new user
+                // If user doesn't exist
                 if (!$dbUser){
-                    // DB query Insert
+                    // DB query Insert user
                     $sentencia = $conexion->prepare("INSERT INTO User (email, name, lastname, telephone, password) VALUES (?, ?, ?, ?, ?)");
                     $sentencia->bindParam(1, $cliente["email"], PDO::PARAM_STR);
                     $sentencia->bindParam(2, $cliente["name"], PDO::PARAM_STR);
