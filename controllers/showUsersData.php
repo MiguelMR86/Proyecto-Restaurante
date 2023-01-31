@@ -14,7 +14,7 @@
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
         
-        /** DB query User Booking */ 
+        // DB query to get your user data 
         $sentencia = $conexion->prepare("SELECT id, bemail, reserveDate, nclients FROM Booking WHERE bemail = ?");
         $sentencia->bindParam(1, $_SESSION["user"], PDO::PARAM_STR);
         $sentencia->execute();
