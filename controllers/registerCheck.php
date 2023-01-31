@@ -20,11 +20,11 @@
             $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
             $cliente = array(
-                "email" => $_POST['registerInputEmail'],
-                "name" => $_POST['registerFirstName'],
-                "lastname" => $_POST['registerLastName'],
-                "telephone" => $_POST['registerInputTel'],
-                "password" => password_hash($_POST['registerInputPassword'], PASSWORD_DEFAULT)
+                "email" => trim(strip_tags($_POST['registerInputEmail'])),
+                "name" => trim(strip_tags($_POST['registerFirstName'])),
+                "lastname" => trim(strip_tags($_POST['registerLastName'])),
+                "telephone" => trim(strip_tags($_POST['registerInputTel'])),
+                "password" => password_hash(trim(strip_tags($_POST['registerInputPassword'])), PASSWORD_DEFAULT)
             );
 
             $valid = true;
