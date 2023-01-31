@@ -23,6 +23,7 @@
 
         $valid = true;
 
+        // Validate empty parameters
         if (validateParamsErrors([$email, $login_pass])){
             $valid = false;
             $resultado['error'] = true;
@@ -30,7 +31,7 @@
         }
 
         if ($valid) {
-            // DB query
+            // DB query to get user
             $sentencia = $conexion->prepare("SELECT email, password FROM User WHERE email = ?");
             $sentencia->bindParam(1, $email);
             $sentencia->execute();
