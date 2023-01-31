@@ -164,7 +164,7 @@ include '../controllers/adminCheck.php';
                 if ($admin){ ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid d-flex justify-content-center w-100 flex-wrap">
-                    <div class="row w-50 d-flex justify-content-center align-self-start align-items-start">      
+                    <div class="row w-50 d-flex justify-content-center align-self-start align-items-startt">      
                         <h1 class="w-100 text-center">Clients</h1>
                         <!-- Show Booking  -->
                         <?php
