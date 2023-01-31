@@ -5,8 +5,7 @@ In this project we will deploy a CRUD project about a restaurant.
 This project is a website for a restaurant that allows users to view the menu and make reservations.
 The website is built using PHP and MySQL database to store information about clients and reservations.
 
-![](https://i.imgur.com/H6btX4e.jpg)
-
+![](https://i.imgur.com/xVzPfnO.jpg)
 
 ## Instalation
 1. Clone the repository to your local machine
