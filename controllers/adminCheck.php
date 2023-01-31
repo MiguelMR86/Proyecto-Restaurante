@@ -20,7 +20,7 @@
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
         
-        // DB query
+        // DB query to check if user is admin
         $sentencia = $conexion->prepare("SELECT admin FROM User WHERE email = ?");
         $sentencia->bindParam(1, $_SESSION["user"], PDO::PARAM_STR);
         $sentencia->execute();
