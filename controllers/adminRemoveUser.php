@@ -14,7 +14,7 @@
         $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
         $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
-        // DB query
+        // DB query to delete a user
         $sentencia = $conexion->prepare('DELETE FROM User WHERE email = ?');
         $sentencia->bindParam(1, $_POST['email'], PDO::PARAM_STR);
         $sentencia->execute();
