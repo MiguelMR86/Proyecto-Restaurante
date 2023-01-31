@@ -54,10 +54,10 @@ if (isset($_SESSION["user"])){
         <!-- Navigation-->
         <nav class="navbar navbar-expand <?= $admin ? 'navbar-primary bg-primary' :  'navbar-secondary bg-secondary'; ?> topbar  static-top shadow">
             <div class="container w-25"></div>
-            <div class="container d-flex justify-content-center w-50">
+            <div class="container d-flex justify-content-center w-50 mr-5">
                 <a class="navbar-brand text-light" href="index.php">Restaurant</a>
             </div>
-            <div class="container w-25 d-flex justify-content-end mr-4">
+            <div class="container w-25 d-flex justify-content-end">
                 <?php if (!isset($_SESSION["user"])){ ?>
                     <div class="drop dropdown w-100">
                         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,47 +73,50 @@ if (isset($_SESSION["user"])){
                         <a class="btn btn-primary shadow m-1 w-75" href="./views/register.php">Sign Up</a>
                     </div>
                 <?php }else{ ?>
-                    <a class="btn btn-success shadow mr-2" href="./views/user.php">Let's start!</a>
+                    <div class="access">
+                        <a class="btn btn-success shadow mr-2" href="./views/user.php">Let's start!</a>
+                    
                 <?php } ?>
             
             
                 <?php if (isset($_SESSION["user"])){ ?>
                 <!-- Topbar Navbar -->
-                <ul class="navbar-nav">
+                    <ul class="navbar-nav">
 
-                    <div class="topbar-divider d-none d-sm-block"></div>
+                        <div class="topbar-divider d-none d-sm-block"></div>
 
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="img-profile rounded-circle"
-                                src="./img/undraw_profile.svg">
-                        </a>
-                        <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                            aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Profile
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="img-profile rounded-circle"
+                                    src="./img/undraw_profile.svg">
                             </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Settings
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Activity Log
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
-                            </a>
-                        </div>
-                    </li>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
 
-                </ul>
+                    </ul>
+                </div>
                 <?php } ?>
             </div>
         </nav>
